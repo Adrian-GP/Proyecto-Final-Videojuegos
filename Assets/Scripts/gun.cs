@@ -14,20 +14,16 @@ public class gun : MonoBehaviour {
 
 	private WaitForSeconds shootDuration = new WaitForSeconds (0.07f);
 
-	AudioSource gunAudio;
 
 	private LineRenderer bulletline;
 
 	private float nextFire; //Time until we allow to fire again.
 
+	public AudioSource audio;
+
 	void Start () {
 		bulletline = GetComponent<LineRenderer> ();
-		gunAudio = (AudioSource)gameObject.AddComponent<AudioSource>();
 		fpsCam = GetComponentInParent<Camera> ();
-		AudioClip gunclip;
-		gunclip= (AudioClip)Resources.Load("40_smith_wesson_single-mike-koenig");
-		gunAudio.clip = gunclip;
-		gunAudio.volume = 0.25f;
 	}
 	
 
@@ -40,10 +36,10 @@ public class gun : MonoBehaviour {
 			Vector3 rayOrigin = fpsCam.ViewportToWorldPoint (new Vector3 (0.5f, 0.5f, 0));
 			RaycastHit Hit;
 
-			bulletline.SetPosition (0, gunEnd.position);
+			//bulletline.SetPosition (0, gunEnd.position);
 
 			if (Physics.Raycast (rayOrigin, fpsCam.transform.forward, out Hit, weaponrange)) {
-				bulletline.SetPosition (1, Hit.point);
+				//bulletline.SetPosition (1, Hit.point);
 
 				enemy health = Hit.collider.GetComponent<enemy>();
 
@@ -56,19 +52,19 @@ public class gun : MonoBehaviour {
 				}
 			} 
 			else {
-				bulletline.SetPosition (1, rayOrigin + (fpsCam.transform.forward * weaponrange));
+				//bulletline.SetPosition (1, rayOrigin + (fpsCam.transform.forward * weaponrange));
 			}
 		}
 	}
 
 	private IEnumerator shooteffect(){
 	
-		gunAudio.Play ();
+		audio.Play ();
 
-		bulletline.enabled = true;
+		//bulletline.enabled = true;
 
 		yield return shootDuration;
 
-		bulletline.enabled = false;
+		//	bulletline.enabled = false;
 	}
 }
