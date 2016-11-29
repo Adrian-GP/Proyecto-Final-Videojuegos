@@ -3,13 +3,11 @@ using System.Collections;
 
 public class enemy : MonoBehaviour {
 
-	public int currenthp = 100;
-	public GameObject en;
-
-	AudioSource enemyaudio;
+	// Public attributes.
+	public int iHealth;
+	public AudioSource audioHurt;
 
 	void Start(){
-
 		/*enemyaudio = (AudioSource)gameObject.AddComponent<AudioSource>();
 		AudioClip enemyclip;
 		enemyclip= (AudioClip)Resources.Load("90164__snaginneb__gruntsound");
@@ -17,23 +15,16 @@ public class enemy : MonoBehaviour {
 		enemyaudio.volume = 1f;
 	*/}
 
-
-	public void Damage(int dmgamount, Collider col){
-
-		if(col.name == "enemy(Clone)")
-		{
-			currenthp -= dmgamount;
-			if (currenthp <= 0) 
-			{
-				endlife(en);
-			}
-			enemyaudio.Play ();
-		}
-	}
-
-	private void endlife(GameObject enemytokill)
+	// Function to deal damage to the enemy.
+	// iQuantity is the amount of damage that the enemy will receive.
+	public void damage(int iQuantity)
 	{
-		Destroy(enemytokill); 
-	}
+		iHealth -= iQuantity;
+		if(audioHurt != null)
+			audioHurt.Play ();
 
+		// If the health of the enemy is 0 or less, destroy it.
+		if (iHealth <= 0)
+			Destroy (this.gameObject);
+	}
 }
