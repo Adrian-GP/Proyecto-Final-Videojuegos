@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/inicioScene.unity
+  - enabled: 1
+    path: Assets/historiaScene.unity
+  - enabled: 1
+    path: Assets/controlesScene.unity
+  - enabled: 1
+    path: Assets/creditosScene.unity
+  - enabled: 1
+    path: Assets/map1.unity
+  - enabled: 1
+    path: Assets/instrucciones.unity
