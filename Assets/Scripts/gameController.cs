@@ -20,6 +20,7 @@ public class gameController : MonoBehaviour {
 	void Update () {
 		if (iCurrentHealth <= 0)
 		{
+			PlayerPrefs.SetInt("wave",1);
 			SceneManager.LoadScene("gameOver");
 			Cursor.visible = true;
 			Screen.lockCursor = false;

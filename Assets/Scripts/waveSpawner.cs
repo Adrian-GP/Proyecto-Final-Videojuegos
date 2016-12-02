@@ -25,25 +25,27 @@ public class waveSpawner : MonoBehaviour {
 
 	// Array that stores the gameobjects of all enemies in the level/game.
 	public GameObject[] arrGObjEnemies;
-public GameObject[] xpositions;
+	public GameObject[] xpositions;
 	public float fTimeBetweenWaves = 5f;
 	public Text TXT;
 	private float fTimeToBeginWave;
 	private int iNextWave;
 	private float fSearchCountdown = 2f;
 	private SpawnState spawnState = SpawnState.Counting;
+	private int enemyCount;
 
 	// Function that is called for initializing values.
 	void Start () 
 	{
 		fTimeToBeginWave = fTimeBetweenWaves;
-		iNextWave = 1;
+		iNextWave = PlayerPrefs.GetInt("wave");
 		TXT.text = iNextWave.ToString();
 	}
 	
 	// Function that is called once per frame.
 	void Update () 
 	{
+		TXT.text = iNextWave.ToString() + "    " + enemyCount + "/" + (8*iNextWave);
 		Debug.Log(SceneManager.GetActiveScene().ToString());
 		// If all the enemies of this wave have been spawned...
 		if(spawnState == SpawnState.Waiting)
@@ -89,19 +91,17 @@ public GameObject[] xpositions;
 
 		iNextWave++;
 
-		TXT.text = iNextWave.ToString();
+		PlayerPrefs.SetInt("wave", iNextWave);
 
-
-
-		if((iNextWave%2 == 0 )&& (Application.loadedLevelName == "map1"))
+		if((iNextWave%5 == 0 )&& (Application.loadedLevelName == "map1"))
 		{
 			SceneManager.LoadScene("map2");
 		}
-		else if((iNextWave%2 == 0 )&& (Application.loadedLevelName == "map2"))
+		else if((iNextWave%5 == 0 )&& (Application.loadedLevelName == "map2"))
 		{
 			SceneManager.LoadScene("map3");
 		}
-		else if((iNextWave%2 == 0 )&& (Application.loadedLevelName == "map3"))
+		else if((iNextWave%5 == 0 )&& (Application.loadedLevelName == "map3"))
 		{
 			SceneManager.LoadScene("map1");
 		}
@@ -119,6 +119,12 @@ public GameObject[] xpositions;
 			if(GameObject.FindGameObjectWithTag("Enemy") == null)
 			{
 				return false;
+			} else {
+				GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+				enemyCount = 0;
+				foreach( GameObject enemy in enemies){
+					++enemyCount;
+				}
 			}
 		}
 		return true;

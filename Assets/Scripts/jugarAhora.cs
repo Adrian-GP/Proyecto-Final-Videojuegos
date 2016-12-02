@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class jugarAhora : MonoBehaviour {
 	public void ChangeScene(string scene){
+		PlayerPrefs.SetInt("wave",1);
 		SceneManager.LoadScene("map1");
 	}
 
