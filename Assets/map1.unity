@@ -2309,8 +2309,8 @@ MonoBehaviour:
     fSpawnDelay: 1.5
     iArrEnemies: 000000000100000002000000
   arrGObjEnemies:
-  - {fileID: 1000012981368726, guid: 8d34a7f02c987874381c265a5c1d8644, type: 2}
-  - {fileID: 1000012680206604, guid: 78a633e16847004498068ca031c2b7e5, type: 2}
+  - {fileID: 1000012752618130, guid: 8d34a7f02c987874381c265a5c1d8644, type: 2}
+  - {fileID: 1000011424918746, guid: 5f6cdb3b523a1b04d99586ffb69ba9fe, type: 2}
   - {fileID: 1000010279163772, guid: 4983a32b025753a43b490ea2f3a1199c, type: 2}
   fTimeBetweenWaves: 5
 --- !u!4 &2069734679
