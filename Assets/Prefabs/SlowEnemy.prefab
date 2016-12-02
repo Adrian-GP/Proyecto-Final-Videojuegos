@@ -1575,6 +1575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iHealth: 200
+  iStrength: 30
+  fInvTime: 0.5
   audioHurt: {fileID: 0}
 --- !u!114 &114000014013945106
 MonoBehaviour:
