@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iHealth: 100
+  iStrength: 10
+  fInvTime: 0.5
   audioHurt: {fileID: 0}
 --- !u!136 &136000013806555204
 CapsuleCollider:
