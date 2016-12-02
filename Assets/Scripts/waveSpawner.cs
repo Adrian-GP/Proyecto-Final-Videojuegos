@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class waveSpawner : MonoBehaviour {
 
@@ -13,20 +14,19 @@ public class waveSpawner : MonoBehaviour {
 	[System.Serializable]
 	public class wave
 	{
-		public string sWaveName;
 		public int iNumberOfEnemies;
 		public float fSpawnDelay;
 		public int[] iArrEnemies;
 	}
 
 	// Array that stores information about each wave of enemies.
-	public wave[] waves;
+	public wave waves;
 
 	// Array that stores the gameobjects of all enemies in the level/game.
 	public GameObject[] arrGObjEnemies;
 
 	public float fTimeBetweenWaves = 5f;
-
+	public Text TXT;
 	private float fTimeToBeginWave;
 	private int iNextWave;
 	private float fSearchCountdown = 2f;
@@ -36,7 +36,8 @@ public class waveSpawner : MonoBehaviour {
 	void Start () 
 	{
 		fTimeToBeginWave = fTimeBetweenWaves;
-		iNextWave = 0;
+		iNextWave = 1;
+		TXT.text = iNextWave.ToString();
 	}
 	
 	// Function that is called once per frame.
@@ -66,7 +67,7 @@ public class waveSpawner : MonoBehaviour {
 			if(spawnState != SpawnState.Spawning)
 			{
 				// Start the spawning.
-				StartCoroutine(SpawnWave(waves[iNextWave]));
+				StartCoroutine(SpawnWave(waves));
 			}
 		}
 
@@ -84,19 +85,10 @@ public class waveSpawner : MonoBehaviour {
 		spawnState = SpawnState.Counting;
 		fTimeToBeginWave = fTimeBetweenWaves;
 
-		// If the this wave was the last one...
-		if(iNextWave + 1 >= waves.Length)
-		{
-			// Do something here according to our needs...
-			iNextWave = 0;
-			//Aqui podemos agregar el multiplicador de dificultad
-		}
+		iNextWave++;
 
-		// Set the next wave to be spawned.
-		else
-		{
-			iNextWave++;
-		}
+		TXT.text = iNextWave.ToString();
+		
 	}
 
 	// Function that returns whether there is one or more enemies alive.
@@ -124,7 +116,7 @@ public class waveSpawner : MonoBehaviour {
 		spawnState = SpawnState.Spawning;
 
 		// Do a loop 'n' times, where 'n' is the number of enemies to be spawned in this wave.
-		for (int iX = 0; iX < _wave.iNumberOfEnemies; iX++)
+		for (int iX = 0; iX < _wave.iNumberOfEnemies*iNextWave; iX++)
 		{
 			// Get the identifier of a random enemy available for this wave.
 			int iRandomIndex = Random.Range (0, _wave.iArrEnemies.Length);

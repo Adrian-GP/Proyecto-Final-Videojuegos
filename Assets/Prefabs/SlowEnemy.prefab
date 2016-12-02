@@ -1539,7 +1539,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: e52be2fa48716194ea1d9d76686005f8, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: e52be2fa48716194ea1d9d76686005f8, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1574,9 +1575,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c89281c06688d4f8eccdcf96dae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iHealth: 200
+  iHealth: 300
   iStrength: 30
-  fInvTime: 0.5
+  fInvTime: 1
   audioHurt: {fileID: 0}
 --- !u!114 &114000014013945106
 MonoBehaviour:
@@ -1595,7 +1596,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010279163772}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3

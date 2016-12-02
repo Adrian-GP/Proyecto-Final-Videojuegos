@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/map1.unity
   - enabled: 1
     path: Assets/instrucciones.unity
+  - enabled: 1
+    path: Assets/gameOver.unity

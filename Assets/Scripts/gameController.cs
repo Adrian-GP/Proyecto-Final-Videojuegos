@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class gameController : MonoBehaviour {
 
@@ -18,8 +20,17 @@ public class gameController : MonoBehaviour {
 	void Update () {
 		if (iCurrentHealth <= 0)
 		{
-			// Game Over.
+			SceneManager.LoadScene("gameOver");
+			Cursor.visible = true;
+			Screen.lockCursor = false;
 		}
 		imageHealth.fillAmount = (float)iCurrentHealth / iMaxHealth;
+	}
+
+	public void Heal (int amount) {
+		iCurrentHealth += amount;
+		if (iCurrentHealth > iMaxHealth) {
+			iCurrentHealth = iMaxHealth;
+		}
 	}
 }

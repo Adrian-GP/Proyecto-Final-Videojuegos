@@ -1731,6 +1731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iHealth: 50
+  iStrength: 5
+  fInvTime: 0.3
   audioHurt: {fileID: 0}
 --- !u!114 &114000012342956074
 MonoBehaviour:
@@ -1768,7 +1770,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011424918746}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 8.377692
