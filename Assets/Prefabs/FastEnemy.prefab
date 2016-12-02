@@ -954,8 +954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c89281c06688d4f8eccdcf96dae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iHealth: 50
-  audioHurt: {fileID: 0}
+  currenthp: 50
+  en: {fileID: 1000012680206604}
 --- !u!114 &114000013899146608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1767,7 +1767,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1000012680206604}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 2
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120

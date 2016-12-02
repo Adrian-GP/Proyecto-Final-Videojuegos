@@ -90,10 +90,10 @@ public class shoot : MonoBehaviour {
 			}
 
 			// If there is a rigidbody attached to the object detected by the raycast, add a force.
-			/*if (rayHit.rigidbody != null)
+			if (rayHit.rigidbody != null)
 			{
 				rayHit.rigidbody.AddForce (-rayHit.normal * fHitForce);
-			}*/
+			}
 		}
 	}
 

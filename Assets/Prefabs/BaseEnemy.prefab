@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013127472664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 147.99115, y: 832.9976, z: 191.61026}
+  m_LocalPosition: {x: 148.64632, y: 832.9976, z: 209.01205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c89281c06688d4f8eccdcf96dae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iHealth: 100
-  audioHurt: {fileID: 0}
+  currenthp: 100
+  en: {fileID: 1000013127472664}
 --- !u!136 &136000013806555204
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -284,7 +284,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1000013127472664}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
