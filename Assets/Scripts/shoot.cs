@@ -36,18 +36,38 @@ public class shoot : MonoBehaviour {
 		// the time is greater than the minimum possible time to be able to shoot AND
 		// there are enough bullets AND
 		// the player isn't reloading...
-		if (Input.GetButtonDown("Fire1") && Time.time > fNextFire && iActualBullets > 0 && !bReload)
+		if(iMaxBullets==30)
 		{
-			// Set the next minimum possible time to shoot and play the shooting sound effect.
-			fNextFire = Time.time + fFireRate;
-			StartCoroutine (playSoundEffect ());
+			if (Input.GetButton("Fire1") && Time.time > fNextFire && iActualBullets > 0 && !bReload)
+			{
+				// Set the next minimum possible time to shoot and play the shooting sound effect.
+				fNextFire = Time.time + fFireRate;
+				StartCoroutine (playSoundEffect ());
 
-			// Call the function that simulates the shot.
-			fire ();
+				// Call the function that simulates the shot.
+				fire ();
 
-			// Reduce the number of bullets available.
-			iActualBullets--;
+				// Reduce the number of bullets available.
+				iActualBullets--;
+			}
+
 		}
+		else
+		{
+			if (Input.GetButtonDown("Fire1") && Time.time > fNextFire && iActualBullets > 0 && !bReload)
+			{
+				// Set the next minimum possible time to shoot and play the shooting sound effect.
+				fNextFire = Time.time + fFireRate;
+				StartCoroutine (playSoundEffect ());
+
+				// Call the function that simulates the shot.
+				fire ();
+
+				// Reduce the number of bullets available.
+				iActualBullets--;
+			}
+		}
+		
 	}
 
 	// Function to simulate the action of shooting.
