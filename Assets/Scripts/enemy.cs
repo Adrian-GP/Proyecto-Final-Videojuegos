@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class enemy : MonoBehaviour {
@@ -6,8 +7,16 @@ public class enemy : MonoBehaviour {
 	// Public attributes.
 	public int iHealth;
 	public AudioSource audioHurt;
+	public RectTransform healthBarBackground;
+	public RectTransform healthBar;
 
 	void Start(){
+		healthBarBackground.sizeDelta = new Vector2 (
+			iHealth,
+			healthBar.sizeDelta.y);
+		healthBar.sizeDelta = new Vector2 (
+			iHealth,
+			healthBar.sizeDelta.y);
 		/*enemyaudio = (AudioSource)gameObject.AddComponent<AudioSource>();
 		AudioClip enemyclip;
 		enemyclip= (AudioClip)Resources.Load("90164__snaginneb__gruntsound");
@@ -26,5 +35,9 @@ public class enemy : MonoBehaviour {
 		// If the health of the enemy is 0 or less, destroy it.
 		if (iHealth <= 0)
 			Destroy (this.gameObject);
+
+		healthBar.sizeDelta = new Vector2 (
+			iHealth,
+			healthBar.sizeDelta.y);
 	}
 }
