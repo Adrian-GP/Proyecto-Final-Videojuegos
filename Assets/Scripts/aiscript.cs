@@ -3,12 +3,12 @@ using System.Collections;
 
 public class aiscript : MonoBehaviour {
 
-	UnityEngine.AI.NavMeshAgent agent;
+	NavMeshAgent agent;
 
 	// Function used to initialize values.
 	void Start () 
 	{
-		agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
+		agent = GetComponent<NavMeshAgent> ();
 	}
 
 	// Function that is called once per frame.
