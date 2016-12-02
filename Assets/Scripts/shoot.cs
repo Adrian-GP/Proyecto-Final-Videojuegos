@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class shoot : MonoBehaviour {
@@ -15,6 +16,7 @@ public class shoot : MonoBehaviour {
 	public Transform tShootPoint;
 	public AudioSource audioShoot;
 	public Camera cam;
+	public Text textAmmo;
 
 	// Private attributes.
 	private float fNextFire;
@@ -27,6 +29,7 @@ public class shoot : MonoBehaviour {
 		bReload = false;
 		fNextFire = 0f;
 		iActualBullets = iMaxBullets;
+		textAmmo.text = "Current weapon ammo: " + iActualBullets + "/" + iMaxBullets + "\nRemaining Catridges: " + (iCartridges == -1 ? "Infinite" : "" + iCartridges);
 	}
 	
 	// Function that is called once per frame
@@ -67,7 +70,8 @@ public class shoot : MonoBehaviour {
 				iActualBullets--;
 			}
 		}
-		
+
+		textAmmo.text = "Current weapon ammo: " + iActualBullets + "/" + iMaxBullets + "\nRemaining Catridges: " + (iCartridges == -1 ? "Infinite" : "" + iCartridges);
 	}
 
 	// Function to simulate the action of shooting.
