@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 13600000}
   - component: {fileID: 11400004}
   - component: {fileID: 114340586504624884}
+  - component: {fileID: 114294667337186248}
   m_Layer: 0
   m_Name: RigidBodyFPSController
   m_TagString: Player
@@ -1938,7 +1939,6 @@ MonoBehaviour:
   tShootPoint: {fileID: 4308276413034078}
   audioShoot: {fileID: 82625381946502542}
   cam: {fileID: 2000000}
-  textAmmo: {fileID: 0}
 --- !u!114 &114157604134248010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1964,6 +1964,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fTimeToReload: 1.5
   anim: {fileID: 95676205447276322}
+--- !u!114 &114294667337186248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f24f95f56bc4cb9a8a94545bf30684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
 --- !u!114 &114340586504624884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2031,7 +2043,6 @@ MonoBehaviour:
   tShootPoint: {fileID: 4293485620529166}
   audioShoot: {fileID: 82720894722179720}
   cam: {fileID: 2000000}
-  textAmmo: {fileID: 0}
 --- !u!120 &120037660904220966
 LineRenderer:
   m_ObjectHideFlags: 1
