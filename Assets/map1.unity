@@ -780,6 +780,7 @@ GameObject:
   - 4: {fileID: 699649522}
   - 218: {fileID: 699649521}
   - 154: {fileID: 699649520}
+  - 95: {fileID: 699649523}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Terrain
@@ -843,6 +844,23 @@ Transform:
   - {fileID: 1469023158}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!95 &699649523
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 699649519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09ed1c1f9a8901e4a993462527e01adc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &802489265
 Prefab:
   m_ObjectHideFlags: 0
@@ -2291,7 +2309,7 @@ MonoBehaviour:
     fSpawnDelay: 1.5
     iArrEnemies: 000000000100000002000000
   arrGObjEnemies:
-  - {fileID: 1000013127472664, guid: 6866c5860f784b246b28de911f76a178, type: 2}
+  - {fileID: 1000012981368726, guid: 8d34a7f02c987874381c265a5c1d8644, type: 2}
   - {fileID: 1000012680206604, guid: 78a633e16847004498068ca031c2b7e5, type: 2}
   - {fileID: 1000010279163772, guid: 4983a32b025753a43b490ea2f3a1199c, type: 2}
   fTimeBetweenWaves: 5

@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.503}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.684}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -705,6 +705,7 @@ GameObject:
   - 222: {fileID: 1213531859}
   - 114: {fileID: 1213531858}
   - 114: {fileID: 1213531857}
+  - 114: {fileID: 1213531860}
   m_Layer: 5
   m_Name: Salir
   m_TagString: Untagged
@@ -769,7 +770,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1213531858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1213531860}
+        m_MethodName: appQuit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1213531858
@@ -805,6 +817,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1213531855}
+--- !u!114 &1213531860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213531855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4520bc8cff4e2d742b77664dd7809235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269849098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1454,7 @@ GameObject:
   - 222: {fileID: 2133130936}
   - 114: {fileID: 2133130935}
   - 114: {fileID: 2133130934}
+  - 114: {fileID: 2133130937}
   m_Layer: 5
   m_Name: Creditos
   m_TagString: Untagged
@@ -1496,12 +1520,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2133130937}
+        m_MethodName: goCredits
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1542,3 +1566,14 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133130932}
+--- !u!114 &2133130937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133130932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4520bc8cff4e2d742b77664dd7809235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
