@@ -4,6 +4,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class waveSpawner : MonoBehaviour {
 
@@ -24,7 +25,7 @@ public class waveSpawner : MonoBehaviour {
 
 	// Array that stores the gameobjects of all enemies in the level/game.
 	public GameObject[] arrGObjEnemies;
-
+public GameObject[] xpositions;
 	public float fTimeBetweenWaves = 5f;
 	public Text TXT;
 	private float fTimeToBeginWave;
@@ -43,6 +44,7 @@ public class waveSpawner : MonoBehaviour {
 	// Function that is called once per frame.
 	void Update () 
 	{
+		Debug.Log(SceneManager.GetActiveScene().ToString());
 		// If all the enemies of this wave have been spawned...
 		if(spawnState == SpawnState.Waiting)
 		{
@@ -88,7 +90,21 @@ public class waveSpawner : MonoBehaviour {
 		iNextWave++;
 
 		TXT.text = iNextWave.ToString();
-		
+
+
+
+		if((iNextWave%2 == 0 )&& (Application.loadedLevelName == "map1"))
+		{
+			SceneManager.LoadScene("map2");
+		}
+		else if((iNextWave%2 == 0 )&& (Application.loadedLevelName == "map2"))
+		{
+			SceneManager.LoadScene("map3");
+		}
+		else if((iNextWave%2 == 0 )&& (Application.loadedLevelName == "map3"))
+		{
+			SceneManager.LoadScene("map1");
+		}
 	}
 
 	// Function that returns whether there is one or more enemies alive.
@@ -138,6 +154,6 @@ public class waveSpawner : MonoBehaviour {
 	// iEnemy is the index of the enemy (in the array of enemy GameObjects) to be spawned.
 	void SpawnEnemy(int iEnemy)
 	{
-		Instantiate(arrGObjEnemies[iEnemy], transform.position, transform.rotation);
+		Instantiate(arrGObjEnemies[iEnemy], xpositions[Random.Range(0,4)].transform.position, transform.rotation);
 	}
 }
